@@ -1,5 +1,4 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db');
+const { DataTypes, sequelize } = require('../config/db');
 
 const FocusLog = sequelize.define('FocusLog', {
     id: {

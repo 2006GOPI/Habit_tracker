@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Habit, HabitLog } = require('../models');
 const auth = require('../middleware/authMiddleware');
-const { Op } = require('sequelize');
+const { Op } = require('../config/db');
 
 // @route   POST api/habits
 // @desc    Create a habit
