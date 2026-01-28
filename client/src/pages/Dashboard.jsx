@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { CheckCircle, Circle, Plus, TrendingUp, Calendar as CalIcon, Search, Trash2 } from 'lucide-react';
+import { CheckCircle, Circle, Plus, Calendar as CalIcon, Search, Trash2 } from 'lucide-react';
 import { Line } from 'react-chartjs-2';
 import api from '../api/axios';
 import { useAuth } from '../context/AuthContext';

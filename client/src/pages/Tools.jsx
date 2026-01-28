@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Activity, Clock, RotateCcw, Calculator, Calendar as CalIcon, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Clock, RotateCcw, Calculator, Calendar as CalIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import api from '../api/axios';
 
 const Tools = () => {
@@ -158,8 +158,8 @@ const Tools = () => {
                     </div>
 
                     <div className="flex-center gap-1">
-                        <button onClick={() => resetTimer('shortBreak')} className="btn text-muted" style={{ fontSize: '0.8rem' }}>Short Break</button>
-                        <button onClick={() => resetTimer('longBreak')} className="btn text-muted" style={{ fontSize: '0.8rem' }}>Long Break</button>
+                        <button onClick={() => resetTimer('shortBreak')} className="btn" style={{ fontSize: '0.8rem', background: 'rgba(255,255,255,0.1)', color: 'var(--text-main)' }}>Short Break</button>
+                        <button onClick={() => resetTimer('longBreak')} className="btn" style={{ fontSize: '0.8rem', background: 'rgba(255,255,255,0.1)', color: 'var(--text-main)' }}>Long Break</button>
                     </div>
 
                     {/* Custom Duration Input */}

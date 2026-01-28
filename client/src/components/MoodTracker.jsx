@@ -98,6 +98,10 @@ const MoodTracker = () => {
         ]
     };
 
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+    const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+    const textColor = isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)';
+
     const options = {
         responsive: true,
         plugins: {
@@ -113,13 +117,14 @@ const MoodTracker = () => {
                 min: 0,
                 max: 6,
                 ticks: {
+                    color: textColor,
                     callback: function (value) {
                         const map = { 1: '😣', 2: '😔', 3: '😐', 4: '🙂', 5: '🤩' };
                         return map[value] || '';
                     }
                 },
                 grid: {
-                    color: 'rgba(255, 255, 255, 0.1)'
+                    color: gridColor
                 }
             },
             x: {
@@ -127,7 +132,7 @@ const MoodTracker = () => {
                     display: false
                 },
                 ticks: {
-                    color: 'rgba(255, 255, 255, 0.6)'
+                    color: textColor
                 }
             }
         }

@@ -21,10 +21,22 @@ const Settings = ({ theme, toggleTheme }) => {
     // Load user data into state
     useEffect(() => {
         if (user) {
+            let userAge = user.age || '';
+            if (!userAge && user.dob) {
+                const birthDate = new Date(user.dob);
+                const today = new Date();
+                let age = today.getFullYear() - birthDate.getFullYear();
+                const m = today.getMonth() - birthDate.getMonth();
+                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                userAge = age;
+            }
+
             setProfileData({
                 username: user.username || '',
                 email: user.email || '',
-                age: user.age || '',
+                age: userAge,
                 gender: user.gender || ''
             });
             setProfileImg(user.profilePicture);

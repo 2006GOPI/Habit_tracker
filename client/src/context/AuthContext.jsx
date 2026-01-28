@@ -77,17 +77,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (username, email, password, dob, gender) => {
         try {
-            await api.post('/auth/register', { username, email, password, dob, gender });
-            // Do not dispatch success yet, wait for OTP
-        } catch (err) {
-            dispatch({ type: 'REGISTER_FAIL' });
-            throw err;
-        }
-    };
-
-    const verifyOtp = async (email, otp) => {
-        try {
-            const res = await api.post('/auth/verify-otp', { email, otp });
+            const res = await api.post('/auth/register', { username, email, password, dob, gender });
             localStorage.setItem('token', res.data.token);
             dispatch({
                 type: 'REGISTER_SUCCESS',
@@ -103,7 +93,7 @@ export const AuthProvider = ({ children }) => {
     const logout = () => dispatch({ type: 'LOGOUT' });
 
     return (
-        <AuthContext.Provider value={{ ...state, login, register, verifyOtp, logout, loadUser }}>
+        <AuthContext.Provider value={{ ...state, login, register, logout, loadUser }}>
             {children}
         </AuthContext.Provider>
     );
