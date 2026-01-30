@@ -14,17 +14,30 @@
       "isVerified": true
     },
     {
-      "username": "gopi",
-      "email": "gopi200616@gmail.com",
-      "password": "$2b$10$cyEu.YZvyFu5dEIDtxOme.FzkgQyb4DadBQODKxmDXAOTgcS9XILi",
-      "age": 19,
+      "username": "admin",
+      "email": "gopiv061606@gmail.com",
+      "password": "$2b$10$DpfdKKRGrwAHm.R26dzQE.6qPunpNBhDJjlsOT9ymemwzS0DGU/Z2",
+      "age": 27,
       "gender": "Male",
       "theme": "light",
-      "dob": "2006-12-28",
+      "dob": "1999-01-01",
       "focusTimePreference": 25,
       "otp": null,
       "otpExpires": null,
       "isVerified": true
+    },
+    {
+      "username": "admin",
+      "email": "gopiv061606@gmail.com",
+      "password": "$2b$10$DpfdKKRGrwAHm.R26dzQE.6qPunpNBhDJjlsOT9ymemwzS0DGU/Z2",
+      "age": 27,
+      "gender": "Male",
+      "theme": "light",
+      "dob": "1999-01-01",
+      "focusTimePreference": 25,
+      "otp": "184440",
+      "otpExpires": "2026-01-17T18:49:44.511Z",
+      "isVerified": false
     }
   ],
   "Habit": [
@@ -32,11 +45,20 @@
       "name": "read",
       "category": "General",
       "description": ""
+    },
+    {
+      "name": "1 chater complete pannanum",
+      "category": "General",
+      "description": "tamil"
     }
   ],
   "HabitLog": [
     {
-      "date": "2025-12-28",
+      "date": "2026-01-04",
+      "status": true
+    },
+    {
+      "date": "2026-01-04",
       "status": true
     }
   ],
@@ -45,6 +67,11 @@
       "mood_score": 5,
       "note": "",
       "date": "2025-12-28"
+    },
+    {
+      "mood_score": 5,
+      "note": "",
+      "date": "2026-01-04"
     }
   ],
   "HealthEntry": [
@@ -53,6 +80,18 @@
       "bmi": 32,
       "status": "Obese",
       "date": "2025-12-28"
+    },
+    {
+      "weight": 56,
+      "bmi": 18.9,
+      "status": "Normal Weight",
+      "date": "2026-01-04"
+    },
+    {
+      "weight": 54,
+      "bmi": 18.3,
+      "status": "Underweight",
+      "date": "2026-01-04"
     }
   ],
   "FocusLog": []
