@@ -53,6 +53,10 @@ const Reports = () => {
         fetchData();
     }, []);
 
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+    const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+    const textColor = isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)';
+
     // 1. Pie Chart: Mood Distribution
     const moodCounts = { 'Happy': 0, 'Okay': 0, 'Sad': 0 };
     moods.forEach(m => {
@@ -133,7 +137,18 @@ const Reports = () => {
                 <div className="glass-panel">
                     <h3 className="mb-2 flex-start gap-1"><PieIcon size={20} /> Mood Distribution</h3>
                     <div style={{ height: '250px', display: 'flex', justifyContent: 'center' }}>
-                        <Pie data={pieData} options={{ responsive: true, plugins: { legend: { position: 'right' } } }} />
+                        <Pie
+                            data={pieData}
+                            options={{
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        position: 'right',
+                                        labels: { color: textColor }
+                                    }
+                                }
+                            }}
+                        />
                     </div>
                     <div className="mt-2 p-1" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
                         <Info size={16} style={{ display: 'inline', marginRight: '5px' }} />
@@ -145,7 +160,26 @@ const Reports = () => {
                 <div className="glass-panel">
                     <h3 className="mb-2 flex-start gap-1"><ChartIcon size={20} /> Focus Consistency</h3>
                     <div style={{ height: '250px' }}>
-                        <Bar data={barData} options={{ responsive: true, scales: { y: { beginAtZero: true } } }} />
+                        <Bar
+                            data={barData}
+                            options={{
+                                responsive: true,
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        grid: { color: gridColor },
+                                        ticks: { color: textColor }
+                                    },
+                                    x: {
+                                        grid: { color: gridColor },
+                                        ticks: { color: textColor }
+                                    }
+                                },
+                                plugins: {
+                                    legend: { labels: { color: textColor } }
+                                }
+                            }}
+                        />
                     </div>
                     <div className="mt-2 p-1" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
                         <Info size={16} style={{ display: 'inline', marginRight: '5px' }} />
@@ -157,7 +191,27 @@ const Reports = () => {
                 <div className="glass-panel" style={{ gridColumn: 'span 2' }}>
                     <h3 className="mb-2 flex-start gap-1"><TrendingUp size={20} /> Habit Trend</h3>
                     <div style={{ height: '250px' }}>
-                        <Line data={lineData} options={{ responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } }} />
+                        <Line
+                            data={lineData}
+                            options={{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: { stepSize: 1, color: textColor },
+                                        grid: { color: gridColor }
+                                    },
+                                    x: {
+                                        ticks: { color: textColor },
+                                        grid: { color: gridColor }
+                                    }
+                                },
+                                plugins: {
+                                    legend: { labels: { color: textColor } }
+                                }
+                            }}
+                        />
                     </div>
                     <div className="mt-2 p-1" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
                         <Info size={16} style={{ display: 'inline', marginRight: '5px' }} />
